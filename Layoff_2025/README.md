@@ -50,7 +50,7 @@ One consequence to keep in mind when reading the figures above: totals reflect o
 
 ## Analysis
 
-`02_eda.sql` covers:
+`eda.sql` covers:
 
 - Totals by company, industry, country, funding stage, and year
 - Monthly totals with a running cumulative sum (`SUM() OVER (ORDER BY month)`)
@@ -68,9 +68,8 @@ CREATE DATABASE world_layoffs;
 Import `data/layoffs_2025.csv` into a table named `layoffs_2025`, then run in order:
 
 ```
-00_setup.sql          -- creates layoffs_staging from layoffs_2025
-01_data_cleaning.sql  -- cleaning, NULL handling, type conversion
-02_eda.sql            -- analysis queries
+data_cleaning.sql  -- cleaning, NULL handling, type conversion
+eda.sql            -- analysis queries
 ```
 
 ## Project structure
@@ -78,9 +77,8 @@ Import `data/layoffs_2025.csv` into a table named `layoffs_2025`, then run in or
 ```
 ├── data/
 │   └── layoffs_2025.csv     # Source data, 4,248 rows
-├── 00_setup.sql             # Staging table creation
-├── 01_data_cleaning.sql     # Cleaning and type conversion
-├── 02_eda.sql               # Analysis
+├── data_cleaning.sql     # Cleaning and type conversion
+├── eda.sql               # Analysis
 └── README.md
 ```
 
